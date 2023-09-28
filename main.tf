@@ -47,7 +47,7 @@ resource "google_service_account" "bishopfox" {
 }
 
 resource "google_service_account_iam_policy" "bishopfox" {
-  policy_data        = "{\"bindings\":[{\"members\":[\"principalSet://iam.googleapis.com/projects/${var.projectNumber}/locations/global/workloadIdentityPools/${var.poolID}/*\",\"principalSet://iam.googleapis.com/projects/${var.projectNumber}/locations/global/workloadIdentityPools/${var.poolID}/attribute.aws_role/prod-bishopfox-auditor\",\"principalSet://iam.googleapis.com/projects/${var.projectNumber}/locations/global/workloadIdentityPools/${var.poolID}/attribute.aws_role/production-argo-workflows\"],\"role\":\"roles/iam.workloadIdentityUser\"}]}"
+  policy_data        = "{\"bindings\":[{\"members\":[\"principalSet://iam.googleapis.com/projects/${var.projectNumber}/locations/global/workloadIdentityPools/${var.poolID}/*\",\"principalSet://iam.googleapis.com/projects/${var.projectNumber}/locations/global/workloadIdentityPools/${var.poolID}/attribute.aws_role/${var.AWS_iamRole1}\",\"principalSet://iam.googleapis.com/projects/${var.projectNumber}/locations/global/workloadIdentityPools/${var.poolID}/attribute.aws_role/${var.AWS_iamRole2}\"],\"role\":\"roles/iam.workloadIdentityUser\"}]}"
   service_account_id = google_service_account.bishopfox.id
 }
 

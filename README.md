@@ -2,13 +2,22 @@
 
 This repo provides terraform code for customers looking to implement Google Cloud connector support for the Bishop Fox Cosmos platform.
 
-There is a dependency on Workload Identity Federation (WIF) being enabled inside the designated project and _values.tfvars_ must be filled out with the _projectID_ and _projectNumber_ of the given project.
+There is a dependency on Workload Identity Federation (WIF) being enabled inside the designated project and _values.tfvars_ or env variables must be filled out with values for the following variables:
+
+- _projectID_
+- _projectNumber_
 
 - Run the following command in order to retrive the current project number:
 
 ```bash
 gcloud projects describe $(gcloud config get-value core/project) --format=value\(projectNumber\)
 ```
+
+**Bishop Fox** will provide the customer with the following variable values:
+
+- AWS_accountID
+- AWS_iamRole1
+- AWS_iamRole2
 
 Once the Workload Identity Pool, Workload Identity Pool AWS provider and [Connected] Service Account are provisioned you can add the service account as a principal with _Compute Viewer role_ to IAM permissions of one or more GCP projects or at the organization-level.
 

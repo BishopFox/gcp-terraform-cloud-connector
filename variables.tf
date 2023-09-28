@@ -21,15 +21,24 @@ variable "displayName" {
 }
 
 variable "providerID" {
-  description = "This is the ID of the Workload Identity Federation identity pool's AWS provider"
+  description = "This is the ID of the Workload Identity Federation identity pool AWS provider"
   type        = string
   default     = "bfawsprovider"
 }
 
 variable "AWS_accountID" {
-  description = "This is the ID of the AWS account for the Workload Identity Federation identity pool's AWS provider"
+  description = "This is the ID of the Bishop Fox AWS account for the Workload Identity Federation identity pool AWS provider"
   type        = string
-  default     = "648456035940"
+}
+
+variable "AWS_iamRole1" {
+  description = "This is the Bishop Fox IAM role for the Workload Identity Federation identity pool AWS provider"
+  type        = string
+}
+
+variable "AWS_iamRole2" {
+  description = "This is the Bishop Fox IAM role for the Workload Identity Federation identity pool AWS provider"
+  type        = string
 }
 
 variable "serviceAccountID" {
