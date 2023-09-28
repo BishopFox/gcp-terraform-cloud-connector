@@ -7,7 +7,7 @@ There is a dependency on Workload Identity Federation (WIF) being enabled inside
 - _projectID_
 - _projectNumber_
 
-- Run the following command in order to retrive the current project number:
+Run the following command in order to retrive the current project number:
 
 ```bash
 gcloud projects describe $(gcloud config get-value core/project) --format=value\(projectNumber\)
@@ -19,7 +19,7 @@ gcloud projects describe $(gcloud config get-value core/project) --format=value\
 - AWS_iamRole1
 - AWS_iamRole2
 
-Once the Workload Identity Pool, Workload Identity Pool AWS provider and [Connected] Service Account are provisioned you can add the service account as a principal with _Compute Viewer role_ to IAM permissions of one or more GCP projects or at the organization-level.
+Once the Workload Identity Pool, Workload Identity Pool AWS provider and [Connected] Service Account are provisioned you can add the service account as a principal with _Compute Viewer role_ to IAM permissions of one or more GCP projects, at the folder-level or at the organization-level.
 
 The customer also needs to provide Bishop Fox with the WIF credentials file that is exported using the following command:
 
@@ -37,6 +37,12 @@ Replace the following values:
 • PROVIDER_ID: The ID of the workload identity pool provider, ex. bfawsprovider
 • SERVICE_ACCOUNT_EMAIL: The email address of the service account
 • FILEPATH: The file to save configuration to
+```
+
+Lastly, Bishop Fox requires the customer GCP Organization ID which can be retrieved using the following command:
+
+```bash
+gcloud organizations list
 ```
 
 ---
