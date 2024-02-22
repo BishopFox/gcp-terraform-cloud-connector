@@ -16,3 +16,8 @@ output "service_account" {
   sensitive   = false
 }
 
+# output value of exportet WIF credential config file
+output "gcp_wif_config" {
+  value = file("gcp-wif-config.json")
+}
+

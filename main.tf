@@ -54,6 +54,17 @@ resource "google_service_account_iam_policy" "bishopfox" {
 }
 
 
+resource "null_resource" "bishopfox" {
+  provisioner "local-exec" {
+    command = "gcloud iam workload-identity-pools create-cred-config projects/${var.projectNumber}/locations/global/workloadIdentityPools/${var.poolID}/providers/${var.providerID} --service-account=${google_service_account.bishopfox.email} --aws --enable-imdsv2 --output-file=gcp-wif-config.json --quiet"
+  }
+  depends_on = [google_iam_workload_identity_pool_provider.bishopfox]
+}
+
+
+
+
+
 
 
 

@@ -11,13 +11,13 @@ variable "projectNumber" {
 variable "poolID" {
   description = "This is the ID of the Workload Identity Federation identity pool"
   type        = string
-  default     = "bfidentitypool"
+  default     = "bfidentitypool-updated1"
 }
 
 variable "displayName" {
   description = "This is the display name of the Workload Identity Federation pool"
   type        = string
-  default     = "bishopfoxidentitypool"
+  default     = "bishopfoxidentitypool-updated1"
 }
 
 variable "providerID" {

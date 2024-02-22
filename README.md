@@ -43,23 +43,7 @@ _Custom Role_ permissions:
 • storage.buckets.list
 ```
 
-The customer also needs to provide Bishop Fox with the WIF credentials file that is exported using the following command:
-
-```bash
-gcloud iam workload-identity-pools create-cred-config \
-projects/PROJECT_NUMBER/locations/global/workloadIdentityPools/POOL_ID/providers/PROVIDER_ID \
-    --service-account=SERVICE_ACCOUNT_EMAIL \
-    --aws \
-    --enable-imdsv2 \
-    --output-file=FILEPATH.json
-
-Replace the following values:
-• PROJECT_NUMBER: The project number of the project that contains the workload identity pool
-• POOL_ID: The ID of the workload identity pool, ex. bfidentitypool
-• PROVIDER_ID: The ID of the workload identity pool provider, ex. bfawsprovider
-• SERVICE_ACCOUNT_EMAIL: The email address of the service account
-• FILEPATH: The file to save configuration to
-```
+The customer also needs to provide Bishop Fox with the WIF credentials file that is exported to gcp-wif-config.json during the terraform run.
 
 Lastly, Bishop Fox requires the customer GCP Organization ID which can be retrieved using the following command:
 
