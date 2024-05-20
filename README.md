@@ -1,13 +1,18 @@
-## customer-workload-identity-federation
+# customer-workload-identity-federation
 
 This repo provides terraform code for customers looking to implement Google Cloud connector support for the Bishop Fox Cosmos platform.
+
+**For the most up to date instructions for how to setup a GCP Cloud Connector, please see [this documentation](https://cosmos.bishopfox.com/ac7ece39-3506-452c-befc-b355b9cf8c0f/documentation/cosmos-documentation#%23setting-up-cloud-connectors-for-google-cloud-platform-(gcp)) in the Cosmos Platform. A PDF of these instructions is exportable at the top of [this page](https://cosmos.bishopfox.com/ac7ece39-3506-452c-befc-b355b9cf8c0f/documentation/cosmos-documentation#%23cosmos-documentation) for team members who do not have access to the Cosmos Platform.
+If you need additional support please reach out to your Customer Success Manager.**
+
+## Legacy Repository Documentation
 
 There is a dependency on Workload Identity Federation (WIF) being enabled inside the designated project and _values.tfvars_ or env variables must be filled out with values for the following variables related to said project:
 
 - _projectID_
 - _projectNumber_
 
-Run the following command in order to retrive the current project number:
+Run the following command in order to retrieve the current project number:
 
 ```bash
 gcloud projects describe $(gcloud config get-value core/project) --format=value\(projectNumber\)
@@ -53,5 +58,4 @@ gcloud organizations list
 
 ---
 
-For more information about Workload Identity Federation best practices and requirements please see:
-https://cloud.google.com/iam/docs/workload-identity-federation-with-other-clouds
+For more information about Workload Identity Federation best practices and requirements please see documenation [here](https://cloud.google.com/iam/docs/workload-identity-federation-with-other-clouds)
